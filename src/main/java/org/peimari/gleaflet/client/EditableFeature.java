@@ -22,7 +22,7 @@ public class EditableFeature extends AbstractPath implements ILayer {
 	
 	public native final void addEditListener(FeatureEditedListener listener) 
 	/*-{
-		this.on("editable:drawing:end", $entry(function(e) {
+		this.on("editable:editing", $entry(function(e) {
 			listener.@org.peimari.gleaflet.client.FeatureEditedListener::onEdit()();
 		}));
 	}-*/;
