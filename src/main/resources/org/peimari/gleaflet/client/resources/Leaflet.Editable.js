@@ -27,7 +27,7 @@ L.Editable = L.Class.extend({
     },
 
     fireAndForward: function (type, e) {
-        e = e || {};
+        e = e || {};
         e.editTools = this;
         this.fire(type, e);
         this.map.fire(type, e);
@@ -51,11 +51,11 @@ L.Editable = L.Class.extend({
     },
 
     createEditLayer: function () {
-        return this.options.editLayer || new L.LayerGroup().addTo(this.map);
+        return this.options.editLayer || new L.LayerGroup().addTo(this.map);
     },
 
     createFeaturesLayer: function () {
-        return this.options.featuresLayer || new L.LayerGroup().addTo(this.map);
+        return this.options.featuresLayer || new L.LayerGroup().addTo(this.map);
     },
 
     moveForwardLineGuide: function (latlng) {
@@ -156,7 +156,7 @@ L.Editable = L.Class.extend({
     },
 
     startMarker: function (latlng) {
-        latlng = latlng || this.map.getCenter();
+        latlng = latlng || this.map.getCenter();
         var marker = this.createMarker(latlng);
         this.connectCreatedToMap(marker);
         var editor = marker.enableEdit();
@@ -342,7 +342,7 @@ L.Editable.VertexMarker = L.Marker.extend({
     },
 
     addMiddleMarker: function (previous) {
-        previous = previous || this.getPrevious();
+        previous = previous || this.getPrevious();
         if (previous && !this.middleMarker) this.middleMarker = this.editor.addMiddleMarker(previous, this, this.latlngs, this.editor);
     },
 
@@ -418,9 +418,11 @@ L.Editable.MiddleMarker = L.Marker.extend({
     },
 
     computeLatLng: function () {
-        var lat = (this.left.latlng.lat + this.right.latlng.lat) / 2,
-            lng = (this.left.latlng.lng + this.right.latlng.lng) / 2;
-        return [lat, lng];
+        var leftPoint = this.editor.map.latLngToContainerPoint(this.left.latlng),
+            rightPoint = this.editor.map.latLngToContainerPoint(this.right.latlng),
+            y = (leftPoint.y + rightPoint.y) / 2,
+            x = (leftPoint.x + rightPoint.x) / 2;
+        return this.editor.map.containerPointToLatLng([x, y]);
     },
 
     onAdd: function (map) {
@@ -495,7 +497,7 @@ L.Editable.BaseEditor = L.Class.extend({
     },
 
     fireAndForward: function (type, e) {
-        e = e || {};
+        e = e || {};
         e.layer = this.feature;
         this.feature.fire(type, e);
         if (this.feature.multi) this.feature.multi.fire(type, e);
@@ -890,8 +892,8 @@ L.Map.mergeOptions({
 var EditableMixin = {
 
     createEditor: function (map) {
-        map = map || this._map;
-        var Klass = this.options.editorClass || this.getEditorClass(map);
+        map = map || this._map;
+        var Klass = this.options.editorClass || this.getEditorClass(map);
         return new Klass(map, this, this.options.editOptions);
     },
 
