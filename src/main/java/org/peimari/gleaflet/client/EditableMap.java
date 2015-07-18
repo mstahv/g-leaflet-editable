@@ -1,6 +1,6 @@
 package org.peimari.gleaflet.client;
 
-public class EditableMap extends Map implements ILayer {
+public class EditableMap extends Map {
 
 	protected EditableMap() {
 	}

@@ -1,6 +1,6 @@
 package org.peimari.gleaflet.client;
 
-public class EditableFeature extends AbstractPath implements ILayer {
+public class EditableFeature extends AbstractPath {
 
 	protected EditableFeature() {
 	}
@@ -44,7 +44,12 @@ public class EditableFeature extends AbstractPath implements ILayer {
 
     public final native void newHole() 
     /*-{
-        this.editor.newHole();
+            var self = this;
+            var startHole = function(e) {
+                self.editor.newHole(e.latlng);
+                self.off("click", startHole);
+            }
+            this.on("click", startHole);
     }-*/;
 
 }
