@@ -26,6 +26,11 @@ public class EditableFeature extends AbstractPath {
 			listener.@org.peimari.gleaflet.client.FeatureEditedListener::onEdit()();
 		}));
 	}-*/;
+    
+    public native final void removeEditListener() 
+    /*-{
+		this.off("editable:editing");
+	}-*/;
 
 	public final void setEnabled(boolean enabled) {
 		if(isEnabled() != enabled) {
