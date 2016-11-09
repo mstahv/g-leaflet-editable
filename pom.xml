@@ -21,7 +21,7 @@
         <dependency>
             <groupId>org.peimari</groupId>
             <artifactId>g-leaflet</artifactId>
-            <version>1.0.0-b1</version>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
