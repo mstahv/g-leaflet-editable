@@ -14,8 +14,13 @@
         <url>git://github.com/mstahv/g-leaflet-editable.git</url>
         <connection>scm:git:git://github.com/mstahv/g-leaflet-editable.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:/mstahv/g-leaflet-editable.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
+    
+    <organization>
+        <name>Vaadin Community</name>
+        <url>http://vaadin.com/forum/</url>
+    </organization>
 
     <dependencies>
         <dependency>
