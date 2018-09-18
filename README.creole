@@ -1,3 +1,8 @@
+{{https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg|Published on Vaadin  Directory}}
+{{https://img.shields.io/vaadin-directory/star/g-leaflet-editable.svg|Stars on Vaadin Directory}}
+
+[[https://vaadin.com/directory/component/g-leaflet-editable|g-leaflet-editable on Vaadin Directory]]
+
 = g-leaflet-editable =
 
 Simple Java (GWT) wrapper for Leaflet.Editable plugin. Depends on g-leaflet project.
