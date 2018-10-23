@@ -29,7 +29,7 @@
         <dependency>
             <groupId>org.peimari</groupId>
             <artifactId>g-leaflet</artifactId>
-            <version>1.0.10</version>
+            <version>1.0.14</version>
         </dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
@@ -60,7 +60,6 @@
             <version>0.3b</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -187,4 +186,11 @@
             </plugins>
         </pluginManagement>
     </build>
+    <repositories>
+       <repository>
+          <id>vaadin-addons</id>
+          <url>http://maven.vaadin.com/vaadin-addons</url>
+       </repository>
+    </repositories>
+    
 </project>
