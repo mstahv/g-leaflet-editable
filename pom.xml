@@ -9,7 +9,10 @@
     <artifactId>g-leaflet-editable</artifactId>
     <packaging>jar</packaging>
     <name>g-leaflet-editable</name>
-        
+    
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>    
     <scm>
         <url>git://github.com/mstahv/g-leaflet-editable.git</url>
         <connection>scm:git:git://github.com/mstahv/g-leaflet-editable.git</connection>
@@ -57,19 +60,6 @@
             <version>0.3b</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.6.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.2</version>
-        </dependency>
-
 
     </dependencies>
 
