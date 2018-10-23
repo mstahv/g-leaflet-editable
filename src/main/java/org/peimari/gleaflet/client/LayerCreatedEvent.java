@@ -5,7 +5,6 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 /**
  *
- * @author Matti Tahvonen <matti@vaadin.com>
  */
 public class LayerCreatedEvent extends JavaScriptObject {
     
